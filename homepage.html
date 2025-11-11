@@ -2,12 +2,13 @@
     <head>
         <title>Homepage</title>
         <link href="./mystyle.css" rel="stylesheet" />
-        <script src="./myscript.js" defer> </script>
+        <script src="./myscript.js" defer></script>
     </head>
     <site-menu>
         <a href="./homepage.html">Начало</a>
         <a href="./about.html">За нас</a>
         <a href="./contact.html">Контакти</a>
+        <a id="login-button">Вход</a>
     </site-menu>
     <body>
         <form method="POST" action="./user.php?key1=value1&key2=value2" class="c">
@@ -18,8 +19,17 @@
             <textarea name="comments" placeholder="Вашите коментари"></textarea>
             
             <p class="c">Това е ПЕ</p>
-            
         </form>
+
+        <div id="login-form">
+            <form>
+                <input type="text" name="username" placeholder="Потребителско име" />
+                <input type="password" name="password" placeholder="Парола" />
+                <input type="submit" value="Вход" />
+                <input type="button" value="Затвори" id="close-button"/>
+            </form>
+        </div>
+
         <div id="container">
             <div>one</div>
             <div>two</div>

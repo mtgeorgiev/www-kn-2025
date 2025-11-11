@@ -59,3 +59,26 @@ site-menu {
     left: 0;
     padding: 5px;
 }
+
+#login-form {
+    position: fixed;
+    right: 0;
+    top: 40px;
+    display: none;
+}
+
+#login-button {
+    float: right;
+    margin: 0 10px;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+#login-button:hover {
+    cursor: pointer;
+    background-color: blanchedalmond;
+}
+
+#container div.selected {
+    background-color: red;
+}
