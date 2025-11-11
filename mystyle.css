@@ -1,0 +1,61 @@
+
+form {
+    width: 300px;
+    background-color: rgb(122, 233, 233);
+    padding: 10px;
+}
+
+form p {
+    color: blue;
+    font-weight: bold;
+}
+
+form p:hover {
+    color: red;
+}
+
+#container div:nth-child(3n+1) {
+    background-color: lightgray;
+}
+
+#container div:nth-child(3n+2) {
+    background-color: lightgreen
+}
+
+.myclass {
+    background-color: blue;
+}
+
+misho {
+    background-color: #ffff00;
+    color: white;
+}
+
+div#uniqueID.myclass.other-class {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+textarea {
+    width: 100%;
+}
+
+site-menu {
+    display: block;
+    background-color: #45ef8f;
+    position: fixed;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 5px;
+}
