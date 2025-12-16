@@ -67,18 +67,22 @@ site-menu {
     display: none;
 }
 
-#login-button {
+#login-button, #logout-button {
     float: right;
     margin: 0 10px;
     padding: 0 5px;
     border-radius: 5px;
 }
 
-#login-button:hover {
+#login-button:hover, #logout-button:hover {
     cursor: pointer;
     background-color: blanchedalmond;
 }
 
 #container div.selected {
     background-color: red;
+}
+
+.session-controls {
+    display: none;
 }

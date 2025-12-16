@@ -7,8 +7,10 @@ class User {
     private $registeredAt;
     private $lastLoginAt;
 
-    public function __construct($id, $name, $age, $registeredAt, $lastLoginAt) {
+    public function __construct($id, $email, $password, $name, $age, $registeredAt, $lastLoginAt) {
         $this->id = $id;
+        $this->email = $email;
+        $this->password = $password;
         $this->name = $name;
         $this->age = $age;
         $this->registeredAt = new DateTime();
@@ -22,6 +24,8 @@ class User {
     public static function fromArray(array $data): User {
         return new User(
             $data['id'],
+            $data['email'],
+            $data['password'],
             $data['name'],
             $data['age'],
             new DateTime($data['registeredAt']),

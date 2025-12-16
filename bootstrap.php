@@ -13,5 +13,6 @@ spl_autoload_register(function ($className) {
 });
 
 set_exception_handler(function ($exception) {
+    echo $exception->getTraceAsString();
     echo "Uncaught exception: " , $exception->getMessage();
 });
