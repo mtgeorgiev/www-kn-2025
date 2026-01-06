@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+
+header('Content-Type: application/json');
+
 spl_autoload_register(function ($className) {
     
     $classDirs = ["classes", "classes/models", "classes/controllers"];

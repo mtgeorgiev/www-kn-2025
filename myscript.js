@@ -42,7 +42,12 @@ function getSelectedElementsV2() {
 }
 
 function loadLoginStatus() {
-    fetch('./session.php', { method: 'GET' })
+    fetch('./session.php', {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json' // works even without this line
+            }
+        })
         .then(unreadResponse => unreadResponse.json())
         .then(response => {
             if (response.loggedIn) {
@@ -52,7 +57,6 @@ function loadLoginStatus() {
             }
         });
 }
-
 
 const loginButton = document.getElementById('login-button');
 loginButton.addEventListener('click', revealLoginForm);
@@ -65,5 +69,30 @@ let selectedElements = new Set();
 document.querySelectorAll('#container div').forEach(element => {
     element.addEventListener('click', selectListElementV2);
 });
+
+document.querySelector('#login-form form')
+    .addEventListener('submit', event => {
+        event.preventDefault();
+
+        // using form data
+        let formData = new FormData(event.target);
+        fetch('./session.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(unreadResponse => unreadResponse.json());
+
+
+        // using json format
+        // let email = event.target.querySelector('input[name="email"]').value;
+        // let password = event.target.querySelector('input[name="password"]').value;
+
+        // fetch('./session.php', {
+        //     method: 'POST',
+        //     body: JSON.stringify({ email, password })
+        // })
+        // .then(unreadResponse => unreadResponse.json());
+    });
+
 
 loadLoginStatus();

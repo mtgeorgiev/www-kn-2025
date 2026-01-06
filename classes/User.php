@@ -4,17 +4,12 @@ class User {
     private $id;
     private $name;
     private $age;
-    private $registeredAt;
-    private $lastLoginAt;
 
-    public function __construct($id, $email, $password, $name, $age, $registeredAt, $lastLoginAt) {
+    public function __construct($id, $email, $name, $age) {
         $this->id = $id;
         $this->email = $email;
-        $this->password = $password;
         $this->name = $name;
         $this->age = $age;
-        $this->registeredAt = new DateTime();
-        $this->lastLoginAt = null;
     }
 
     public function getFullName() {
@@ -25,11 +20,29 @@ class User {
         return new User(
             $data['id'],
             $data['email'],
-            $data['password'],
             $data['name'],
-            $data['age'],
-            new DateTime($data['registeredAt']),
-            isset($data['lastLoginAt']) ? new DateTime($data['lastLoginAt']) : null
+            $data['age']
         );
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
+    public function getHashedPassword() {
+        return $this->hashedPassword;
+    }
+
+    public function setPassword($password) {
+        $this->hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    }
+    public function getName() {
+        return $this->name;
+    }
+    public function getAge() {
+        return $this->age;
     }
 }
